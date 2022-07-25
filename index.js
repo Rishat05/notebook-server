@@ -20,7 +20,6 @@ async function run() {
 
         app.get('/notes', async (req, res) => {
             const query = req.query;
-            console.log('geting');
             const cursor = notesCollection.find(query);
             const notes = await cursor.toArray();
             res.send(notes);
